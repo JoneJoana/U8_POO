@@ -9,7 +9,7 @@ public class Password {
 		this.passwdRandom = "";
 	}
 	
-	public Password(int length) {  //TODO ponerlo en metodo
+	public Password(int length) {  
 		this.length = length;
 		this.passwdRandom = generatePasswd(length); 
 	}	
