@@ -53,11 +53,24 @@ public class MainApp {
 		
 		
 		
-		// TODO ---- CLASS ELECTRODOMESTICO ----
+		// ---- CLASS ELECTRODOMESTICO ----
 		System.out.println("\nCLASS ELECTRODOMESTICO");
 		
 		Electrodomestico electro1 = new Electrodomestico();
+
+		Electrodomestico electro2 = new Electrodomestico("secador Revlon 33A",199.99,50);
 		
+		Electrodomestico electro3 = new Electrodomestico("plancha 452B",30,"verde",'E',50); //al pasarle por parametro un color no valido nos saldra valor NULL
+		
+		System.out.println("Intentamos cambiarle color a uno no valido - lila");
+		electro2.setColour("lila");		
+		System.out.println(electro2.toString());
+		
+		System.out.println("Le cambiamos color a uno valido");
+		electro2.setColour("azul");		
+		System.out.println(electro2.toString());
+		
+		System.out.println(electro3.toString());
 		
 		
 		
