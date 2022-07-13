@@ -10,7 +10,7 @@ public class MainApp {
 		//creamos personas con los distintos constructores
 		Persona person1 = new Persona();		
 		Persona person2 = new Persona("joana",33,'H');		
-		Persona person3 = new Persona("Oscar",34,'H',"46991350G",78,180);
+		Persona person3 = new Persona("Oscar",34,'T',"46991350G",78,180); //al no poner genero correcto me imprime el equivalente a null para un char
 		
 		System.out.println("Imprimimos persona 1 tal cual ha sido creada:"); 
 		System.out.println(person1.toString()); 
@@ -74,7 +74,24 @@ public class MainApp {
 		
 		
 		
-		// TODO ---- CLASS SERIE ---- 
+		// ---- CLASS SERIE ---- 
+		System.out.println("\nCLASS SERIE");
+		
+		Serie serie1 = new Serie();
+		
+		Serie serie2 = new Serie("You dont know me","Sarmad Masud");
+		
+		Serie serie3 = new Serie("Russian doll",2,"dramatic comedy","Natasha Lyonne");
+		
+		System.out.println(serie1.toString());
+		
+		System.out.println(serie2.toString());
+		
+		System.out.println(serie3.toString());
+		
+		serie3.setDelivered(true);
+		
+		System.out.println(serie3.toString());
 		
 		
 	}
