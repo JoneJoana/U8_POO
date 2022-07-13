@@ -48,8 +48,7 @@ public class Electrodomestico {
 			if(e == energ) {
 				this.energIntake = energ;
 			}			
-		}		
-			
+		}			
 	}
 	
 	public String getProduct() {
