@@ -10,6 +10,7 @@ public class Electrodomestico {
 	private final double WEIGHT_DEFAULT = 5;
 
 	//protected para que sean heredables
+	protected String product; //añadimos atributo para identificarlo
 	protected double price;
 	protected String colour;
 	protected char energIntake;//letras entre A y F
@@ -17,24 +18,50 @@ public class Electrodomestico {
 	
 	
 	public Electrodomestico() {
+		this.product = "";
 		this.price = PRICE_DEFAULT;
 		this.colour = COLOUR_DEFAULT;
 		this.energIntake = INTAKE_DEFAULT;
 		this.weight = WEIGHT_DEFAULT;
 	}
 	
-	public Electrodomestico(double price,double weight) {		
+	public Electrodomestico(String product,double price,double weight) { //añadimos product para identificacion
+		this.product = product;
 		this.price = price;
 		this.colour = COLOUR_DEFAULT;
 		this.energIntake = INTAKE_DEFAULT;
 		this.weight = weight;
 	}
 	
-	public Electrodomestico(double price,String colour,char energ,double weight) {
-		this.price = price;
-		this.colour = colour;
-		this.energIntake = energ;
-		this.weight = weight;		
+	public Electrodomestico(String product,double price,String colour,char energ,double weight) {
+		this.product = product;
+		this.price = price;		
+		this.weight = weight;	
+		
+		for(String color: colours) {
+			if(color.equalsIgnoreCase(colour)) {
+				this.colour = colour;
+			}else{
+				System.out.println("Introduce color vàlido");
+			}
+		}
+		
+		for(char e: optionsEnergIntake) {
+			if(e == energ) {
+				this.energIntake = energ;
+			}else{
+				System.out.println("Introduce consumo energetico vàlido");
+			}			
+		}		
+			
+	}
+	
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 	public double getPrice() {
@@ -50,7 +77,13 @@ public class Electrodomestico {
 	}
 
 	public void setColour(String colour) {
-		this.colour = colour;
+		for(String color: colours) {
+			if(color.equalsIgnoreCase(colour)) {
+				this.colour = colour;
+			}else{
+				System.out.println("Introduce color vàlido");
+			}
+		}
 	}
 
 	public char getEnergIntake() {
@@ -58,7 +91,13 @@ public class Electrodomestico {
 	}
 
 	public void setEnergIntake(char energIntake) {
-		this.energIntake = energIntake;
+		for(char e: optionsEnergIntake) {
+			if(e == energIntake) {
+				this.energIntake = energIntake;
+			}else{
+				System.out.println("Introduce consumo energetico vàlido");
+			}			
+		}
 	}
 
 	public double getWeight() {
@@ -68,4 +107,14 @@ public class Electrodomestico {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
+	
+	@Override
+	public String toString() {	
+		return "\nDatos del electrodomestico\n "
+				+ "Producto: "+this.product
+				+"\n Color: "+this.colour
+				+"\n Consumo energetico: "+this.energIntake
+				+"\n Peso: "+this.weight
+				+"\n";		
+	}	
 }
