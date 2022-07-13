@@ -69,7 +69,11 @@ public class Persona {
 	}
 
 	public void setGender(char gender) {
-		this.gender = gender;
+		if(gender == WOMAN || gender == MAN) {
+			this.gender = gender;
+		}else {
+			System.out.println("Introduce valor valido: M o H");
+		}		
 	}
 
 	public double getWeight() {
@@ -86,5 +90,17 @@ public class Persona {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+	
+	@Override
+	public String toString() {	
+		return "\nDatos de la persona\n "
+				+ "Nombre: "+this.name
+				+"\n Edad: "+this.age
+				+"\n Genero: "+this.gender
+				+"\n DNI: "+this.dni
+				+"\n Peso: "+this.weight
+				+"\n Altura (cm): "+this.height
+				+"\n";		
 	}
 }
