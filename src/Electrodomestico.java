@@ -41,16 +41,12 @@ public class Electrodomestico {
 		for(String color: colours) {
 			if(color.equalsIgnoreCase(colour)) {
 				this.colour = colour;
-			}else{
-				System.out.println("Introduce color vàlido");
 			}
 		}
 		
 		for(char e: optionsEnergIntake) {
 			if(e == energ) {
 				this.energIntake = energ;
-			}else{
-				System.out.println("Introduce consumo energetico vàlido");
 			}			
 		}		
 			
@@ -77,12 +73,15 @@ public class Electrodomestico {
 	}
 
 	public void setColour(String colour) {
+		boolean correct = false;
 		for(String color: colours) {
 			if(color.equalsIgnoreCase(colour)) {
 				this.colour = colour;
-			}else{
-				System.out.println("Introduce color vàlido");
+				correct = true;
 			}
+		}
+		if(!correct) {
+			System.out.println("Introduce color valido");
 		}
 	}
 
@@ -91,12 +90,15 @@ public class Electrodomestico {
 	}
 
 	public void setEnergIntake(char energIntake) {
+		boolean correct = false;
 		for(char e: optionsEnergIntake) {
 			if(e == energIntake) {
 				this.energIntake = energIntake;
-			}else{
-				System.out.println("Introduce consumo energetico vàlido");
-			}			
+				correct = true;
+			}					
+		}
+		if(!correct) {
+			System.out.println("Introduce consumo energetico valido");
 		}
 	}
 
