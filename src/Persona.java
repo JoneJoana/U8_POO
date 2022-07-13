@@ -23,21 +23,28 @@ public class Persona {
 	//por parametro name,age,gender - lo demas por defecto (entiendo que incluido dni)
 	public Persona(String name,int age,char gender) {		
 		this.name = name;
-		this.age = age;
-		this.gender = gender;
+		this.age = age;		
 		this.dni = "";
 		this.weight = 0;
 		this.height = 0;	
+		
+		if(gender == WOMAN || gender == MAN) {
+			this.gender = gender;
+		}
 	}
 
 	//constructor con todos los atributos
 	public Persona(String name,int age,char gender,String dni,double weight,int height) {
 		this.name = name;
 		this.age = age;
-		this.gender = gender;
 		this.dni = dni;
 		this.weight = weight;
-		this.height = height;		
+		this.height = height;	
+		
+		if(gender == WOMAN || gender == MAN) {
+			this.gender = gender;
+		}
+		
 	}
 
 	public String getName() {
